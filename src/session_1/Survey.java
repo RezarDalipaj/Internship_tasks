@@ -185,14 +185,14 @@ public class Survey {
         if (k == j) {
             System.out.println("\nResponses of candidate " + c.getFirstName() + " in survey " + this.getTitle() + "\n");
             for (int l = 0; l < getNrQuestions(); l++) {
-                System.out.println("Package1.Question #" + (l + 1) + "." + questions[l].getQuestion());
+                System.out.println("Question #" + (l + 1) + "." + questions[l].getQuestion());
                 if (answers[k][l].getAnswer() == "")
-                    System.out.println("Package1.Candidate " + c.getFirstName() + " hasnt answered this question");
+                    System.out.println("Candidate " + c.getFirstName() + " hasnt answered this question");
                 else
-                    System.out.println("Package1.Candidate " + c.getFirstName() + " response: " + answers[k][l].getAnswer());
+                    System.out.println("Candidate " + c.getFirstName() + " response: " + answers[k][l].getAnswer());
             }
         } else
-            System.out.println("Package1.Candidate " + c.getFirstName() + " hasnt taken this survey");
+            System.out.println("Candidate " + c.getFirstName() + " hasnt taken this survey");
     }
 
     public int[] getNoAnswer() {
@@ -203,7 +203,7 @@ public class Survey {
         int exists = -1;
         int i;
         if (this.getNrQuestions()==10){
-            System.out.println("\nPackage1.Survey "+this.getTitle()+" has a minimum number of questions. Cant remove question");
+            System.out.println("\nSurvey "+this.getTitle()+" has a minimum number of questions. Cant remove question");
             return;
         }
         for (i = 0; i < getNrQuestions(); i++) {
@@ -218,15 +218,15 @@ public class Survey {
             }
             questions[getNrQuestions()] = null;
             this.nrQuestions--;
-            System.out.println("Package1.Question: " + q + " is deleted");
+            System.out.println("Question: " + q + " is deleted");
         } else
             System.out.println("This question is not in this survey");
     }
 
     public void printSurvey() {
-        System.out.println("Package1.Survey title: " + this.getTitle());
-        System.out.println("Package1.Survey topic: " + this.getTopic());
-        System.out.println("Package1.Survey description: " + this.getDescription() + "\n");
+        System.out.println("Survey title: " + this.getTitle());
+        System.out.println("Survey topic: " + this.getTopic());
+        System.out.println("Survey description: " + this.getDescription() + "\n");
         for (int i = 0; i < this.getNrQuestions(); i++) {
             System.out.println((i + 1) + ". " + this.questions[i].getQuestion());
             System.out.println("a) Agree\nb) Slightly Agree\nc) Slightly Disagree\nd) Disagree\n");

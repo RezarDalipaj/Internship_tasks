@@ -51,8 +51,8 @@ public class Candidate {
         this.addSurvey(survey);
         survey.addCandidate(this);
         System.out.println("Welcome to our survey "+survey.getTitle()+", "+this.getFirstName());
-        System.out.println("Package1.Survey topic: " + survey.getTopic());
-        System.out.println("Package1.Survey description: " + survey.getDescription()+"\n");
+        System.out.println("Survey topic: " + survey.getTopic());
+        System.out.println("Survey description: " + survey.getDescription()+"\n");
         Answer [] answers = new Answer[survey.getNrQuestions()];
         for(int i=0;i< survey.getNrQuestions();i++){
             System.out.println(survey.getQuestions(i).getQuestionNr()+1 + ". "+survey.getQuestions(i).getQuestion());
@@ -85,7 +85,7 @@ public class Candidate {
                 survey.addAnswer(answers[i]);
             }
         }
-        System.out.println("\nPackage1.Survey completed!");
+        System.out.println("\nSurvey completed!");
     }
 
     public int getNrSurveys() {

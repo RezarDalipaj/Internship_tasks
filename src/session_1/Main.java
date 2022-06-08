@@ -34,7 +34,7 @@ public class Main {
                 Question[] questsionss = new Question[quests];
                 surveys[nr] = new Survey(titlee, topicc, descc);
                 for (int i = 0; i < quests; i++) {
-                    System.out.println("Package1.Question #" + (i + 1) + ":");
+                    System.out.println("Question #" + (i + 1) + ":");
                     String actualquest = read.nextLine();
                     questsionss[i] = new Question(actualquest, surveys[nr], i);
                     surveys[nr].addQuestion(questsionss[i]);
@@ -46,13 +46,13 @@ public class Main {
                         i--;
                     }
                 }
-                System.out.println("Package1.Survey created successfully");
+                System.out.println("Survey created successfully");
 //                System.out.println("Printing survey\n");
 //                surveys[nr].printSurvey();
 
             } else {
                 read.nextLine();
-                System.out.println("Package1.Survey couldnt be created (requires 10-40 questions)");
+                System.out.println("Survey couldnt be created (requires 10-40 questions)");
             }
             System.out.println("Press 0 to stop adding surveys (other to add more)");
             nr++;
@@ -63,15 +63,20 @@ public class Main {
         Candidate[] candidates = new Candidate[100];
         do {
             System.out.println("Creating candidate");
-            System.out.println("Package1.Candidate first name:");
+            System.out.println("Candidate first name:");
             String fname = read.nextLine();
-            System.out.println("Package1.Candidate last name:");
+            System.out.println("Candidate last name:");
             String lname = read.nextLine();
             candidates[nr_c] = new Candidate(fname, lname);
             int l = 0;
             String ctrl;
             do {
-                System.out.println("Press 1 to take the survey " + surveys[l].getTitle() + " (other to skip it)");
+                try{
+                    System.out.println("Press 1 to take the survey " + surveys[l].getTitle() + " (other to skip it)");
+                }
+                catch (NullPointerException e){
+                    System.out.println("Press 1 to take the survey " + surveys[l].getTitle() + " (other to skip it)");
+                }
                 ctrl = read.nextLine();
                 if (!(ctrl.equalsIgnoreCase("1"))) {
                     l++;
