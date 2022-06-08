@@ -1,4 +1,4 @@
-package Package1;
+package session_1;
 
 public class Answer {
     private Survey surv;

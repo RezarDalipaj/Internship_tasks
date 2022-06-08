@@ -1,4 +1,4 @@
-package Package1;
+package session_1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

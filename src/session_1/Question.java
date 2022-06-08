@@ -1,4 +1,4 @@
-package Package1;
+package session_1;
 
 public class Question {
     private String question;
